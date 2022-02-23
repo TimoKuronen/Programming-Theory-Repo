@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject[] objectPrefab;
+    private bool objectSpawned;
+    public bool ObjectIsSpawned;
+
     void Start()
     {
-        
+        SpawnerManager.Instance.AddSpawnerToList(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnObject()
     {
-        
+        objectSpawned = true;
+        int random = Random.Range(0, 2);
+        var obj = Instantiate(objectPrefab[random], transform.position, transform.rotation, null);
+        obj.GetComponent<ItemBase>().SpawnMe(this);
+    }
+
+    public void CollectObject()
+    {
+        objectSpawned = false;
+        SpawnerManager.Instance.Despawned();
     }
 }

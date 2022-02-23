@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     void StartMatch()
     {
         PlayerManager.Instance.ControlLock(false);
+        SpawnerManager.Instance.StartSpawning();
     }
 
     public void PlayerScored()

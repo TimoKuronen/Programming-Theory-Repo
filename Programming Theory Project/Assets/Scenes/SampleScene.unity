@@ -322,6 +322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &79282389
 Transform:
   m_ObjectHideFlags: 0
@@ -492,6 +496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &196077476
 Transform:
   m_ObjectHideFlags: 0
@@ -628,6 +636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &224186980
 Transform:
   m_ObjectHideFlags: 0
@@ -849,7 +861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &301061015
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -862,7 +874,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -891,7 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useXaxis: 0
-  distanceToMove: 0
+  distanceToMove: 10
 --- !u!65 &301061018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -995,6 +1007,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &344539498
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,6 +1054,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &439265064
 Transform:
   m_ObjectHideFlags: 0
@@ -1073,7 +1093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &520306249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1086,7 +1106,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1115,7 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useXaxis: 0
-  distanceToMove: 0
+  distanceToMove: 10
 --- !u!65 &520306252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1211,7 +1231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &590554965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,7 +1257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useXaxis: 0
-  distanceToMove: 0
+  distanceToMove: 10
 --- !u!65 &590554967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1324,7 +1344,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1760,6 +1780,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &871566138
 Transform:
   m_ObjectHideFlags: 0
@@ -1894,6 +1918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924417414}
   - component: {fileID: 924417413}
+  - component: {fileID: 924417415}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1928,6 +1953,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924417415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924417412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439a7690850154d4ead55a4d489b3ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCount: 0
+  spawnInterval: 0
 --- !u!1 &941149974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &955546287
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2055,7 +2094,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2084,7 +2123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useXaxis: 0
-  distanceToMove: 0
+  distanceToMove: 10
 --- !u!65 &955546290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2364,6 +2403,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &975614928
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,6 +2636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &1064281765
 Transform:
   m_ObjectHideFlags: 0
@@ -3273,6 +3320,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &1608177253
 Transform:
   m_ObjectHideFlags: 0
@@ -3308,7 +3359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1740646990
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3321,7 +3372,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3350,7 +3401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useXaxis: 0
-  distanceToMove: 0
+  distanceToMove: 10
 --- !u!65 &1740646993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3732,6 +3783,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e94bef942c8e4ba7626609c417d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2552361833564483955, guid: b767a746158d21347810a29a8bdcb3dc, type: 3}
+  - {fileID: 2595235937429358272, guid: dd1ac7ac0109bc64b902efa3ac22e224, type: 3}
+  ObjectIsSpawned: 0
 --- !u!4 &1932715284
 Transform:
   m_ObjectHideFlags: 0
@@ -3848,7 +3903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &2025437344
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3861,7 +3916,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3890,7 +3945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useXaxis: 0
-  distanceToMove: 0
+  distanceToMove: 10
 --- !u!65 &2025437347
 BoxCollider:
   m_ObjectHideFlags: 0

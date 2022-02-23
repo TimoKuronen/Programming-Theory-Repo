@@ -28,8 +28,8 @@ public class TrapMover : MonoBehaviour
             return;
 
         if (useXaxis)
-            transform.position = new Vector3(Mathf.PingPong(Time.time * speed, distanceToMove) - distanceToMove / 2f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(Mathf.PingPong(Time.time * speed, distanceToMove) + distanceToMove, transform.position.y, transform.position.z);
         else
-            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.PingPong(Time.time * speed, distanceToMove) - distanceToMove / 2f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.PingPong(Time.time * speed, distanceToMove) + distanceToMove);
     }
 }
