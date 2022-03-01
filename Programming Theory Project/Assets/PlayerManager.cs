@@ -5,25 +5,33 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour, IDamageReceiver
 {
     public static PlayerManager Instance;
+    [SerializeField] private float kickPower;
+    [SerializeField] private Transform ballPosition;
+    [HideInInspector] public float x, z;
+
     private bool inputLocked;
     private bool gotTheBall;
     private Vector3 startPosition;
+    private Rigidbody ballObject;
+
     public bool IsInputLocked => inputLocked;
+    public bool HasBall => gotTheBall;
 
-    public float x, z;
-
-    [SerializeField] private float kickPower;
-
-    void Awake()
+    private void Awake()
     {
         Instance = this;
         startPosition = this.transform.position;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (IsInputLocked && gotTheBall)
+                return;
+
             inputLocked = !inputLocked;
+        }
 
         if (IsInputLocked)
             return;
@@ -31,12 +39,12 @@ public class PlayerManager : MonoBehaviour, IDamageReceiver
         GetInput();
     }
 
-    void GetInput()
+    private void GetInput()
     {
         x = -Input.GetAxis("Vertical");
         z = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
             KickTheBall();
     }
 
@@ -45,12 +53,18 @@ public class PlayerManager : MonoBehaviour, IDamageReceiver
         inputLocked = value;
     }
 
-    void KickTheBall()
+    private void KickTheBall()
     {
+        if (!gotTheBall)
+            return;
 
+        BallTrigger(false);
+
+        ballObject.AddExplosionForce(kickPower, transform.position, 1);
+        ballObject = null;
     }
 
-    IEnumerator RestartPosition()
+    private IEnumerator RestartPosition()
     {
         ControlLock(true);
         transform.position = startPosition;
@@ -60,9 +74,23 @@ public class PlayerManager : MonoBehaviour, IDamageReceiver
         ControlLock(false);
     }
 
-    void BallTrigger(bool value)
+    private void BallTrigger(bool value, Rigidbody ball = default)
     {
         gotTheBall = value;
+
+        if (value)
+        {
+            ball.isKinematic = value;
+            ballObject = ball;
+            ballObject.transform.SetParent(ballPosition);
+            ballObject.transform.localPosition = Vector3.zero;
+            ballObject.velocity = Vector3.zero;
+        }
+        else
+        {
+            ballObject.isKinematic = value;
+            ballObject.transform.SetParent(null);           
+        }
     }
 
     public void TouchTrap()
@@ -70,11 +98,18 @@ public class PlayerManager : MonoBehaviour, IDamageReceiver
         StartCoroutine(RestartPosition());
     }
 
-    void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         Debug.Log("player hit object " + other.gameObject);
         if (other.gameObject.CompareTag("Trap"))
             TouchTrap();
+        else if (other.gameObject.CompareTag("Ball"))
+        {
+            if (gotTheBall)
+                return;
+
+            BallTrigger(true, other.gameObject.GetComponent<Rigidbody>());
+        }
     }
 
     public IEnumerator BoostPower(float powerIncrease, float powerDuration)

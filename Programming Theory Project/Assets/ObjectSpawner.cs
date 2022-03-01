@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectPrefab;
-    private bool objectSpawned;
-    public bool ObjectIsSpawned;
 
-    void Start()
+    private bool objectSpawned;
+    public bool ObjectIsSpawned => objectSpawned;
+
+    private void Start()
     {
         SpawnerManager.Instance.AddSpawnerToList(this);
     }

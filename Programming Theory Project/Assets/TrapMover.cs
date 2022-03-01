@@ -6,15 +6,17 @@ public class TrapMover : MonoBehaviour
 {
     [SerializeField] private bool useXaxis;
     [SerializeField] private float distanceToMove;
-    private float speed;
+    [SerializeField] private float speed;
     private float waitDuration;
     private bool activated;
+    private Vector3 startPosition;
 
     void Start()
     {
-        speed = Random.Range(2, 4);
+        speed *= Random.Range(0.75f, 1.25f);
         waitDuration = Random.Range(0, 1.5f);
         Invoke("ActivateTrap", Random.Range(0, 2));
+        startPosition = transform.position;
     }
 
     void ActivateTrap()
@@ -27,9 +29,6 @@ public class TrapMover : MonoBehaviour
         if (!activated)
             return;
 
-        if (useXaxis)
-            transform.position = new Vector3(Mathf.PingPong(Time.time * speed, distanceToMove) + distanceToMove, transform.position.y, transform.position.z);
-        else
-            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.PingPong(Time.time * speed, distanceToMove) + distanceToMove);
+        transform.position = startPosition + transform.forward * Mathf.Sin(Time.time * waitDuration) * speed;
     }
 }

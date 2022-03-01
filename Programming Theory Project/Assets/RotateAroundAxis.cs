@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class RotateAroundAxis : MonoBehaviour
 {
-    public enum RotationAxis { x, y, z};
+    public enum RotationAxis { x, y, z };
     public RotationAxis rotationAxis;
 
     [SerializeField] private float speed;
 
     void FixedUpdate()
     {
-
-            transform.RotateAround(transform.position, Vector3.up, speed * Time.deltaTime);
+        transform.RotateAround(transform.position, Vector3.up, speed * Time.deltaTime);
     }
 }

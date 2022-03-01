@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
@@ -11,7 +10,7 @@ public class SpawnerManager : MonoBehaviour
     private List<ObjectSpawner> spawners = new List<ObjectSpawner>();
     private int spawnedObjectsCount;
 
-    void Awake()
+    private void Awake()
     {
         Instance = this;
     }
