@@ -3,6 +3,7 @@
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectPrefab;
+    [SerializeField] private bool forceSpawn;
 
     private bool objectSpawned;
     public bool ObjectIsSpawned => objectSpawned;
@@ -10,6 +11,8 @@ public class ObjectSpawner : MonoBehaviour
     private void Start()
     {
         SpawnerManager.Instance.AddSpawnerToList(this);
+        if (forceSpawn)
+            SpawnObject();
     }
 
     public void SpawnObject()

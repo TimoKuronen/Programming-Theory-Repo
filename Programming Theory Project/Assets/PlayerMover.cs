@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
@@ -14,11 +13,13 @@ public class PlayerMover : MonoBehaviour
     private float x,z;
     private Rigidbody rig;
     private float maxVelocity = 3f;
+    private float origVelocity;
 
     private void Awake()
     {
         Instance = this;
         rig = GetComponent<Rigidbody>();
+        origVelocity = maxVelocity;
     }
 
     private void FixedUpdate()
@@ -65,10 +66,14 @@ public class PlayerMover : MonoBehaviour
 
     public IEnumerator BoostSpeed(float powerIncrease, float powerDuration)
     {
+        float speedincrease = (speed + powerIncrease) / speed;
+        maxVelocity *= speedincrease;
         speed += powerIncrease;
-
+    
+        Debug.Log(speed);
         yield return new WaitForSeconds(powerDuration);
 
+        maxVelocity = origVelocity;
         speed -= powerIncrease;
     }
 }

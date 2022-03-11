@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour, IDamageReceiver
 {
-    public static PlayerManager Instance;
+    // "ENCAPSULATION” //
+    public static PlayerManager Instance { get; private set; }
     [SerializeField] private float kickPower;
     [SerializeField] private Transform ballPosition;
     [HideInInspector] public float x, z;
@@ -39,6 +40,7 @@ public class PlayerManager : MonoBehaviour, IDamageReceiver
         GetInput();
     }
 
+    // ABSTRACTION
     private void GetInput()
     {
         x = -Input.GetAxis("Vertical");
@@ -53,6 +55,7 @@ public class PlayerManager : MonoBehaviour, IDamageReceiver
         inputLocked = value;
     }
 
+    // ABSTRACTION
     private void KickTheBall()
     {
         if (!gotTheBall)
@@ -100,7 +103,6 @@ public class PlayerManager : MonoBehaviour, IDamageReceiver
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("player hit object " + other.gameObject);
         if (other.gameObject.CompareTag("Trap"))
             TouchTrap();
         else if (other.gameObject.CompareTag("Ball"))

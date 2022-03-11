@@ -2,7 +2,8 @@
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    // "ENCAPSULATION” //
+    public static GameManager Instance { get; private set; }
 
     [SerializeField] private float matchDuration;
 
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
     public void PlayerScored()
     {
         gameWon = true;
-        Time.timeScale = 0;
+        UI_Canvas.Instance.WinTrigger();
+        Time.timeScale = 0.0000000001f;
     }
 }

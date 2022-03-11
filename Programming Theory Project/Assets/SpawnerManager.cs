@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
 {
-    public static SpawnerManager Instance;
+    public static SpawnerManager Instance { get; private set; }
     [SerializeField] private int spawnCount;
     [SerializeField] private int spawnInterval;
 

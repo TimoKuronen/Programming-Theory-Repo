@@ -3,6 +3,7 @@
 public class ItemBase : MonoBehaviour
 {
     private ObjectSpawner objectSpawner;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
